@@ -3,7 +3,7 @@
 int main(int argc, char* argv[]) {
 
     if(!SDL_InitSubSystem(SDL_INIT_VIDEO))
-        SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "%s", SDL_GetError());
+        SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, SDL_GetError());
 
     int w = 800;
     int h = 600;
@@ -11,11 +11,11 @@ int main(int argc, char* argv[]) {
     auto window = SDL_CreateWindow("asdasd", w, h, SDL_WINDOW_RESIZABLE);
 
     if(!window)
-        SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "%s", SDL_GetError());
+        SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, SDL_GetError());
 
     SDL_Renderer* renderer = SDL_CreateRenderer(window, NULL);
     if (!renderer) {
-        SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "%s", SDL_GetError());
+        SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, SDL_GetError());
         SDL_DestroyWindow(window);
         SDL_Quit();
         return 1;
