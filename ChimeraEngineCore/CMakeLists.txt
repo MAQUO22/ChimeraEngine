@@ -3,15 +3,30 @@ cmake_minimum_required(VERSION 3.12)
 set(ENGINE_PROJECT_NAME ChimeraEngineCore)
 
 set(ENGINE_PUBLIC_INCLUDES
-    include/test.hpp
+    include/Application.hpp
+    include/Window.hpp
+    include/APIContextPicker.hpp
+    include/APIContext.hpp
 )
 
 set(ENGINE_PRIVATE_INCLUDES
-
+    
 )
 
 set(ENGINE_PRIVATE_SOURCES
-    src/test.cpp
+    src/Application.cpp
+    src/Window.cpp
+    src/WindowImpl.cpp
+    src/WindowImpl.hpp
+
+    src/APIContext/APIContext.cpp
+    src/APIContext/APIContextPicker.cpp
+    src/APIContext/OpenGLContext.hpp
+    src/APIContext/OpenGLContext.cpp
+    src/APIContext/VulkanContext.hpp
+    src/APIContext/VulkanContext.cpp
+    src/APIContext/DirectXContext.hpp
+    src/APIContext/DirectXContext.cpp
 )
 
 set(ENGINE_ALL_SOURCES
